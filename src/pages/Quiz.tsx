@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MainLayout from '@/components/layout/MainLayout';
@@ -32,8 +33,14 @@ const Quiz = () => {
       
       setIsLoading(true);
       try {
-        const data = await getQuizQuestions(topicId);
-        setQuestions(data);
+        // Get all available questions
+        const allQuestions = await getQuizQuestions(topicId);
+        
+        // Randomly select 10 questions (or less if there are fewer than 10 questions)
+        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 10);
+        
+        setQuestions(selected);
         setStartTime(Date.now());
       } catch (error) {
         console.error('Error loading quiz questions:', error);

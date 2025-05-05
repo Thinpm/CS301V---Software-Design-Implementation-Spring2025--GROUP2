@@ -1,4 +1,3 @@
-
 // Vocabulary API Service
 
 export interface VocabularyTopic {
@@ -127,7 +126,8 @@ export const getQuizQuestions = async (topicId: string): Promise<QuizQuestion[]>
   // This will be replaced with actual API call
   console.log('Fetching quiz questions for topic:', topicId);
   
-  // Mock data for frontend development
+  // Mock data for frontend development - increased to more than 10 questions
+  // to demonstrate the random selection
   return [
     {
       id: '1',
@@ -146,6 +146,60 @@ export const getQuizQuestions = async (topicId: string): Promise<QuizQuestion[]>
       question: 'Thank you',
       options: ['Xin chào', 'Tạm biệt', 'Cảm ơn', 'Làm ơn'],
       correctAnswer: 'Cảm ơn',
+    },
+    {
+      id: '4',
+      question: 'Please',
+      options: ['Xin chào', 'Tạm biệt', 'Cảm ơn', 'Làm ơn'],
+      correctAnswer: 'Làm ơn',
+    },
+    {
+      id: '5',
+      question: 'Sorry',
+      options: ['Xin lỗi', 'Chúc mừng', 'Tạm biệt', 'Cảm ơn'],
+      correctAnswer: 'Xin lỗi',
+    },
+    {
+      id: '6',
+      question: 'Good morning',
+      options: ['Chào buổi sáng', 'Chào buổi tối', 'Chúc ngủ ngon', 'Tạm biệt'],
+      correctAnswer: 'Chào buổi sáng',
+    },
+    {
+      id: '7',
+      question: 'Good evening',
+      options: ['Chào buổi sáng', 'Chào buổi tối', 'Chúc ngủ ngon', 'Xin lỗi'],
+      correctAnswer: 'Chào buổi tối',
+    },
+    {
+      id: '8',
+      question: 'Good night',
+      options: ['Chào buổi sáng', 'Chào buổi tối', 'Chúc ngủ ngon', 'Xin lỗi'],
+      correctAnswer: 'Chúc ngủ ngon',
+    },
+    {
+      id: '9',
+      question: 'How are you',
+      options: ['Bạn khỏe không', 'Tạm biệt', 'Cảm ơn', 'Xin lỗi'],
+      correctAnswer: 'Bạn khỏe không',
+    },
+    {
+      id: '10',
+      question: 'Nice to meet you',
+      options: ['Rất vui được gặp bạn', 'Tạm biệt', 'Cảm ơn', 'Xin lỗi'],
+      correctAnswer: 'Rất vui được gặp bạn',
+    },
+    {
+      id: '11',
+      question: 'Welcome',
+      options: ['Chào mừng', 'Tạm biệt', 'Cảm ơn', 'Xin lỗi'],
+      correctAnswer: 'Chào mừng',
+    },
+    {
+      id: '12',
+      question: 'Congratulations',
+      options: ['Xin chào', 'Chúc mừng', 'Cảm ơn', 'Xin lỗi'],
+      correctAnswer: 'Chúc mừng',
     },
   ];
 };
