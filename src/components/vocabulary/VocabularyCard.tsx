@@ -14,27 +14,15 @@ const VocabularyCard: React.FC<VocabularyCardProps> = ({ word, index }) => {
       <CardHeader className="pb-2">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-bold">{word.word}</h3>
-          <span className="text-sm text-muted-foreground">{word.pronunciation}</span>
+          <span className="text-sm text-muted-foreground">{word.phonetic}</span>
         </div>
       </CardHeader>
       <CardContent>
         <div className="space-y-2">
           <div>
-            <p className="text-sm font-medium text-muted-foreground mb-1">Nghĩa Tiếng Anh:</p>
-            <p>{word.englishMeaning}</p>
+            <p className="text-sm font-medium text-muted-foreground mb-1">Nghĩa:</p>
+            <p className="font-medium text-primary">{word.meaning}</p>
           </div>
-          
-          <div>
-            <p className="text-sm font-medium text-muted-foreground mb-1">Nghĩa Tiếng Việt:</p>
-            <p className="font-medium text-primary">{word.vietnameseMeaning}</p>
-          </div>
-          
-          {word.example && (
-            <div>
-              <p className="text-sm font-medium text-muted-foreground mb-1">Ví dụ:</p>
-              <p className="italic text-sm">{word.example}</p>
-            </div>
-          )}
         </div>
       </CardContent>
     </Card>

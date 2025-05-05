@@ -5,32 +5,40 @@ export interface VocabularyTopic {
   id: string;
   name: string;
   description: string;
-  imageUrl: string;
-  wordCount: number;
+  imageUrl?: string; // This isn't in your DB but useful for UI
+  wordCount?: number; // This will be calculated from related vocabularies
 }
 
 export interface VocabularyWord {
   id: string;
   word: string;
-  englishMeaning: string;
-  vietnameseMeaning: string;
-  pronunciation: string;
-  example?: string;
+  meaning: string; // Vietnamese meaning
+  phonetic: string; // Phonetic pronunciation
   topicId: string;
 }
 
 export interface QuizQuestion {
   id: string;
-  word: string;
-  options: string[];
+  question: string; // The word to be tested
   correctAnswer: string;
+  options: string[]; // Will be constructed from option1, option2, option3 and correct_answer
+}
+
+export interface TestResult {
+  userId: string;
+  topicId: string;
+  score: number;
+  completionTime: number;
 }
 
 export interface LeaderboardEntry {
   userId: string;
   username: string;
-  score: number;
-  rank: number;
+  topicId: string;
+  totalScore: number;
+  testsCompleted: number;
+  averageScore: number;
+  rank: number; // Will be calculated
 }
 
 // Placeholder functions to be implemented when backend is ready
@@ -80,46 +88,36 @@ export const getVocabularyByTopic = async (topicId: string): Promise<VocabularyW
     {
       id: '1',
       word: 'Hello',
-      englishMeaning: 'A greeting used when meeting someone',
-      vietnameseMeaning: 'Xin chào',
-      pronunciation: '/həˈloʊ/',
-      example: 'Hello, how are you today?',
+      meaning: 'Xin chào',
+      phonetic: '/həˈloʊ/',
       topicId,
     },
     {
       id: '2',
       word: 'Goodbye',
-      englishMeaning: 'A farewell remark',
-      vietnameseMeaning: 'Tạm biệt',
-      pronunciation: '/ˌɡʊdˈbaɪ/',
-      example: 'Goodbye, see you tomorrow!',
+      meaning: 'Tạm biệt',
+      phonetic: '/ˌɡʊdˈbaɪ/',
       topicId,
     },
     {
       id: '3',
       word: 'Thank you',
-      englishMeaning: 'An expression of gratitude',
-      vietnameseMeaning: 'Cảm ơn',
-      pronunciation: '/θæŋk juː/',
-      example: 'Thank you for your help.',
+      meaning: 'Cảm ơn',
+      phonetic: '/θæŋk juː/',
       topicId,
     },
     {
       id: '4',
       word: 'Please',
-      englishMeaning: 'Used as a polite request',
-      vietnameseMeaning: 'Làm ơn, xin vui lòng',
-      pronunciation: '/pliːz/',
-      example: 'Please pass me the salt.',
+      meaning: 'Làm ơn, xin vui lòng',
+      phonetic: '/pliːz/',
       topicId,
     },
     {
       id: '5',
       word: 'Sorry',
-      englishMeaning: 'Used as an apology',
-      vietnameseMeaning: 'Xin lỗi',
-      pronunciation: '/ˈsɒri/',
-      example: "I'm sorry for being late.",
+      meaning: 'Xin lỗi',
+      phonetic: '/ˈsɒri/',
       topicId,
     },
   ];
@@ -133,40 +131,40 @@ export const getQuizQuestions = async (topicId: string): Promise<QuizQuestion[]>
   return [
     {
       id: '1',
-      word: 'Hello',
+      question: 'Hello',
       options: ['Xin chào', 'Tạm biệt', 'Cảm ơn', 'Làm ơn'],
       correctAnswer: 'Xin chào',
     },
     {
       id: '2',
-      word: 'Goodbye',
+      question: 'Goodbye',
       options: ['Xin chào', 'Tạm biệt', 'Cảm ơn', 'Làm ơn'],
       correctAnswer: 'Tạm biệt',
     },
     {
       id: '3',
-      word: 'Thank you',
+      question: 'Thank you',
       options: ['Xin chào', 'Tạm biệt', 'Cảm ơn', 'Làm ơn'],
       correctAnswer: 'Cảm ơn',
     },
   ];
 };
 
-export const getLeaderboard = async (): Promise<LeaderboardEntry[]> => {
+export const getLeaderboard = async (topicId?: string): Promise<LeaderboardEntry[]> => {
   // This will be replaced with actual API call
-  console.log('Fetching leaderboard');
+  console.log('Fetching leaderboard', topicId ? `for topic: ${topicId}` : '');
   
   // Mock data for frontend development
   return [
-    { userId: '1', username: 'User1', score: 95, rank: 1 },
-    { userId: '2', username: 'User2', score: 90, rank: 2 },
-    { userId: '3', username: 'User3', score: 85, rank: 3 },
-    { userId: '4', username: 'User4', score: 80, rank: 4 },
-    { userId: '5', username: 'User5', score: 75, rank: 5 },
+    { userId: '1', username: 'User1', topicId: '1', totalScore: 95, testsCompleted: 3, averageScore: 95, rank: 1 },
+    { userId: '2', username: 'User2', topicId: '1', totalScore: 90, testsCompleted: 3, averageScore: 90, rank: 2 },
+    { userId: '3', username: 'User3', topicId: '1', totalScore: 85, testsCompleted: 3, averageScore: 85, rank: 3 },
+    { userId: '4', username: 'User4', topicId: '1', totalScore: 80, testsCompleted: 2, averageScore: 80, rank: 4 },
+    { userId: '5', username: 'User5', topicId: '1', totalScore: 75, testsCompleted: 2, averageScore: 75, rank: 5 },
   ];
 };
 
-export const submitQuizScore = async (topicId: string, score: number): Promise<void> => {
+export const submitQuizScore = async (userId: string, topicId: string, score: number, completionTime: number): Promise<void> => {
   // This will be replaced with actual API call
-  console.log('Submitting quiz score:', { topicId, score });
+  console.log('Submitting quiz score:', { userId, topicId, score, completionTime });
 };

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MainLayout from '@/components/layout/MainLayout';
@@ -15,6 +14,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [startTime, setStartTime] = useState<number>(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const Quiz = () => {
       try {
         const data = await getQuizQuestions(topicId);
         setQuestions(data);
+        setStartTime(Date.now());
       } catch (error) {
         console.error('Error loading quiz questions:', error);
       } finally {
@@ -62,7 +63,8 @@ const Quiz = () => {
     if (!topicId) return;
     
     try {
-      await submitQuizScore(topicId, score);
+      const completionTime = Math.floor((Date.now() - startTime) / 1000); // Convert to seconds
+      await submitQuizScore("1", topicId, score, completionTime); // userId hardcoded for now
     } catch (error) {
       console.error('Error submitting quiz score:', error);
     }
@@ -74,6 +76,7 @@ const Quiz = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
     setQuizCompleted(false);
+    setStartTime(Date.now());
   };
 
   if (isLoading) {

@@ -52,8 +52,7 @@ const TopicDetail = () => {
 
   const filteredWords = words.filter(word => 
     word.word.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    word.englishMeaning.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    word.vietnameseMeaning.toLowerCase().includes(searchQuery.toLowerCase())
+    word.meaning.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

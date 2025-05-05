@@ -56,7 +56,7 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({
     <Card className="w-full max-w-2xl mx-auto animate-fade-in">
       <CardHeader>
         <CardTitle className="text-center text-xl">
-          What is the meaning of "{question.word}"?
+          What is the meaning of "{question.question}"?
         </CardTitle>
       </CardHeader>
       

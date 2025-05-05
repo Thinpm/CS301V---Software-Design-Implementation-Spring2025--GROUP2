@@ -1,15 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import MainLayout from '@/components/layout/MainLayout';
-import { getLeaderboard, LeaderboardEntry } from '@/api/vocabulary';
+import { getLeaderboard, LeaderboardEntry, getVocabularyTopics, VocabularyTopic } from '@/api/vocabulary';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { checkAuthStatus } from '@/api/auth';
 import { Medal } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Leaderboard = () => {
+  const { topicId } = useParams<{ topicId?: string }>();
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
+  const [topics, setTopics] = useState<VocabularyTopic[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedTopicId, setSelectedTopicId] = useState<string>(topicId || 'all');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,24 +22,32 @@ const Leaderboard = () => {
       if (!isAuthenticated) {
         navigate('/');
       } else {
-        loadLeaderboard();
+        loadData();
       }
     };
     
-    const loadLeaderboard = async () => {
+    const loadData = async () => {
       setIsLoading(true);
       try {
-        const data = await getLeaderboard();
-        setEntries(data);
+        const [leaderboardData, topicsData] = await Promise.all([
+          getLeaderboard(selectedTopicId !== 'all' ? selectedTopicId : undefined),
+          getVocabularyTopics()
+        ]);
+        setEntries(leaderboardData);
+        setTopics(topicsData);
       } catch (error) {
-        console.error('Error loading leaderboard:', error);
+        console.error('Error loading data:', error);
       } finally {
         setIsLoading(false);
       }
     };
     
     checkAuth();
-  }, [navigate]);
+  }, [navigate, selectedTopicId, topicId]);
+
+  const handleTopicChange = (topicId: string) => {
+    setSelectedTopicId(topicId);
+  };
 
   const getMedalColor = (rank: number): string => {
     switch (rank) {
@@ -58,6 +70,17 @@ const Leaderboard = () => {
           </div>
         </div>
         
+        <Tabs defaultValue={selectedTopicId} onValueChange={handleTopicChange}>
+          <TabsList className="w-full overflow-x-auto flex flex-nowrap">
+            <TabsTrigger value="all">Tất cả</TabsTrigger>
+            {topics.map((topic) => (
+              <TabsTrigger key={topic.id} value={topic.id} className="whitespace-nowrap">
+                {topic.name}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+        
         {isLoading ? (
           <div className="space-y-4">
             {[1, 2, 3, 4, 5].map(i => (
@@ -71,7 +94,9 @@ const Leaderboard = () => {
                 <TableRow>
                   <TableHead className="w-20">Xếp hạng</TableHead>
                   <TableHead>Người dùng</TableHead>
-                  <TableHead className="text-right">Điểm</TableHead>
+                  <TableHead className="text-right">Điểm Tổng</TableHead>
+                  <TableHead className="text-right">Bài Kiểm Tra</TableHead>
+                  <TableHead className="text-right">Điểm TB</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -87,7 +112,9 @@ const Leaderboard = () => {
                       </div>
                     </TableCell>
                     <TableCell>{entry.username}</TableCell>
-                    <TableCell className="text-right font-medium">{entry.score}</TableCell>
+                    <TableCell className="text-right font-medium">{entry.totalScore}</TableCell>
+                    <TableCell className="text-right">{entry.testsCompleted}</TableCell>
+                    <TableCell className="text-right">{entry.averageScore.toFixed(1)}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
