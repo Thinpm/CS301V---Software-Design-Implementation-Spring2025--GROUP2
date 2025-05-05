@@ -119,7 +119,7 @@ export const getVocabularyByTopic = async (topicId: string): Promise<VocabularyW
       englishMeaning: 'Used as an apology',
       vietnameseMeaning: 'Xin lỗi',
       pronunciation: '/ˈsɒri/',
-      example: 'I'm sorry for being late.',
+      example: "I'm sorry for being late.",
       topicId,
     },
   ];
