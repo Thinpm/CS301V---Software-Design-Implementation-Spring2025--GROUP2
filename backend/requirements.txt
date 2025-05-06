@@ -1,0 +1,14 @@
+Flask==2.0.1
+Flask-Cors==3.0.10
+PyMySQL==1.0.2
+python-dotenv==0.19.0
+bcrypt==3.2.0
+Werkzeug==2.0.1
+pytest==6.2.5
+pytest-cov==2.12.1
+black==21.7b0
+flake8==3.9.2
+mypy==0.910
+mysql-connector-python==8.0.26
+SQLAlchemy==1.4.23
+PyJWT==2.10.1 

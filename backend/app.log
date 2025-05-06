@@ -1,0 +1,140 @@
+2025-04-29 11:48:38,669 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:71 - Unexpected error during registration: UserDAO.create() got an unexpected keyword argument 'username'
+2025-04-29 11:51:08,846 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:63 - Registration validation failed: {'errors': ['Password must contain at least one special character']}
+2025-04-29 11:51:17,356 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:56 - User registered successfully: phanminhthuy
+2025-04-29 11:54:19,914 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:93 - User logged in successfully: phanminhthuy
+2025-04-29 11:58:27,260 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:93 - User logged in successfully: phanminhthuy
+2025-04-29 12:05:44,468 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:104 - Login authentication failed: Invalid username or password
+2025-04-29 12:06:55,386 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:93 - User logged in successfully: phanminhthuy
+2025-04-29 12:10:25,188 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:104 - Login authentication failed: Invalid username or password
+2025-04-29 12:11:51,375 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:56 - User registered successfully: testuser
+2025-04-29 12:13:03,137 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:105 - Login authentication failed: Invalid username or password
+2025-04-29 12:18:17,800 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:94 - User logged in successfully: phanminhthuy
+2025-04-29 12:18:17,801 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:112 - Unexpected error during login: name 'JWT_CONFIG' is not defined
+2025-04-29 12:22:18,184 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:74 - Registration validation failed: Username already exists
+2025-04-29 12:22:30,377 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:67 - User registered successfully: phanminhthuy01
+2025-04-29 12:22:50,687 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:104 - User logged in successfully: phanminhthuy01
+2025-04-29 12:29:48,498 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:104 - User logged in successfully: phanminhthuy01
+2025-04-29 12:32:33,949 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:48 - Registration validation failed: {'errors': ['Password must contain at least one uppercase letter']}
+2025-04-29 12:32:44,817 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:48 - Registration validation failed: {'errors': ['Password must contain at least one uppercase letter']}
+2025-04-29 12:33:11,654 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:48 - Registration validation failed: Username already exists
+2025-04-29 12:33:18,041 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:48 - Registration validation failed: Email already exists
+2025-04-29 12:33:27,116 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:41 - User registered successfully: testuser01
+2025-04-29 12:33:57,460 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:94 - Unexpected error during login: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2025-04-29 13:09:21,616 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:47 - Registration validation failed: Username already exists
+2025-04-29 13:09:33,550 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:40 - User registered successfully: testuser02
+2025-04-29 13:09:47,908 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 13:41:31,762 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 14:24:52,379 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 17:56:04,885 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 18:00:06,266 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 18:32:27,036 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:82 - User logged in successfully: testuser02
+2025-04-29 19:20:15,585 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True}
+2025-04-29 19:20:15,586 - vocabulary_app - WARNING - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:17 - No user_id in session
+2025-04-29 19:20:21,173 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:84 - Session after login: user_id=8, username=testuser02
+2025-04-29 19:20:21,173 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:86 - User logged in successfully: testuser02
+2025-04-29 19:20:32,137 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:32,137 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:20:35,853 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:35,853 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:20:38,373 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:38,374 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:20:41,867 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:41,868 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:20:44,668 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:44,669 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:20:47,693 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:20:47,693 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:27:09,015 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:27:09,015 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:28:44,420 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:28:44,421 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:34:57,563 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:34:57,564 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:38:12,700 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:38:12,700 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:44:58,631 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:44:58,632 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:49:14,252 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:49:14,253 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:53:38,942 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:84 - Session after login: user_id=8, username=testuser02
+2025-04-29 19:53:38,945 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:86 - User logged in successfully: testuser02
+2025-04-29 19:53:44,369 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:53:44,369 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:53:48,519 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:53:48,519 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:53:53,038 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:53:53,038 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:53:58,131 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:53:58,132 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:54:02,287 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:54:02,287 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:54:06,451 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:54:06,452 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:55:08,882 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:55:08,883 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 19:56:02,599 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 19:56:02,600 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:01:37,205 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:01:37,205 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:14:08,319 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'LeaderboardDAO' from 'backend.dao.leaderboards' (unknown location)
+2025-04-29 20:14:29,667 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'LeaderboardDAO' from 'backend.dao.leaderboards' (unknown location)
+2025-04-29 20:14:43,736 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'LeaderboardDAO' from 'backend.dao.leaderboards' (unknown location)
+2025-04-29 20:14:54,672 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'LeaderboardDAO' from 'backend.dao.leaderboards' (unknown location)
+2025-04-29 20:15:05,580 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'LeaderboardDAO' from 'backend.dao.leaderboards' (unknown location)
+2025-04-29 20:16:29,566 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:16:45,635 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:17:02,795 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:17:57,405 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:18:22,803 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:18:24,275 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:18:34,527 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:20:48,708 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:21:20,501 - vocabulary_app - ERROR - C:\Users\taiphan\Documents\software\28\backend\app.py:9 - Error during imports: cannot import name 'ILeaderboardService' from 'backend.business_layer.interfaces' (unknown location)
+2025-04-29 20:25:08,542 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:25:08,542 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:34:35,368 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:34:35,369 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:37:17,693 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:37:17,694 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:40:41,162 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:40:41,163 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:40:53,099 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:40:53,099 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:44:12,680 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:44:12,683 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:44:39,944 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:44:39,944 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:46:20,592 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:46:20,594 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:46:35,009 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:46:35,009 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:50:25,881 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:50:25,882 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:51:57,334 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:51:57,335 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 20:52:09,230 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 20:52:09,231 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:16:27,948 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:16:27,949 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:16:34,882 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:16:34,883 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:18:34,453 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:18:34,453 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:18:42,848 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:18:42,849 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:22:17,241 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:22:17,242 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:36:47,595 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:84 - Session after login: user_id=8, username=testuser02
+2025-04-29 21:36:47,609 - vocabulary_app - INFO - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:86 - User logged in successfully: testuser02
+2025-04-29 21:36:54,286 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:36:54,289 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:37:17,470 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:37:17,470 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:37:23,135 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:37:23,136 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:43:09,338 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:43:09,340 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:43:13,663 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:43:13,663 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
+2025-04-29 21:43:15,342 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:15 - Checking session: {'_permanent': True, 'user_id': 8, 'username': 'testuser02'}
+2025-04-29 21:43:15,343 - vocabulary_app - DEBUG - C:\Users\taiphan\Documents\software\28\backend\api\auth.py:19 - User authenticated: user_id=8
