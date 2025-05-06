@@ -18,8 +18,8 @@ const Quiz = () => {
   const [error, setError] = useState<string | null>(null);
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const hasSubmittedRef = useRef(false);
-  const hasClickedNextRef = useRef(false);
+  const hasSubmittedRef = useRef(false); // ✅ chống gọi lại
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,19 +39,33 @@ const Quiz = () => {
       setError(null);
       setUserAnswers({});
       try {
+        console.log('Loading quiz questions for topic:', topicId);
         const allQuestions = await getQuizQuestions(topicId);
+        console.log('Received questions from API:', allQuestions);
+
         if (!allQuestions || allQuestions.length === 0) {
-          setError('Không có câu hỏi nào cho chủ đề này.');
+          setError('Không có câu hỏi nào cho chủ đề này. Vui lòng thử chủ đề khác.');
           setIsLoading(false);
           return;
         }
 
+        const invalidQuestions = allQuestions.filter(q =>
+          !q.options || !Array.isArray(q.options) || q.options.length === 0
+        );
+
+        if (invalidQuestions.length > 0) {
+          console.error('Found invalid questions:', invalidQuestions);
+        }
+
         const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, Math.min(5, shuffled.length));
+
+        console.log('Selected questions for quiz:', selected);
         setQuestions(selected);
         setStartTime(Date.now());
       } catch (error) {
-        setError('Lỗi khi tải câu hỏi.');
+        console.error('Error loading quiz questions:', error);
+        setError('Đã xảy ra lỗi khi tải câu hỏi. Vui lòng thử lại sau.');
       } finally {
         setIsLoading(false);
       }
@@ -61,36 +75,44 @@ const Quiz = () => {
   }, [topicId, navigate]);
 
   const handleAnswer = (isCorrect: boolean, questionId: string, selectedAnswer: string) => {
-    setUserAnswers(prev => ({ ...prev, [questionId]: selectedAnswer }));
+    setUserAnswers(prev => ({
+      ...prev,
+      [questionId]: selectedAnswer
+    }));
+
     if (isCorrect) {
-      setScore(prev => prev + 1);
+      setScore(prevScore => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
-    if (hasClickedNextRef.current) return;
-    hasClickedNextRef.current = true;
-
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-      hasClickedNextRef.current = false;
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
     } else {
       completeQuiz();
     }
   };
 
   const completeQuiz = async () => {
-    if (!topicId || hasSubmittedRef.current) return;
-    hasSubmittedRef.current = true;
+    if (!topicId) return;
+
+    // ✅ Ngăn gọi lại nhiều lần triệt để
+    if (hasSubmittedRef.current) {
+      console.warn('completeQuiz đã được gọi rồi, bỏ qua...');
+      return;
+    }
+    hasSubmittedRef.current = true; // ✅ Đặt flag NGAY LẬP TỨC
 
     try {
       setIsSubmitting(true);
       const completionTime = Math.floor((Date.now() - startTime) / 1000);
-      const userId = localStorage.getItem('user_id') || '1';
+      const userId = localStorage.getItem('user_id') || "1";
+      console.log('User answers before submission:', userAnswers);
+
       await submitQuizScore(userId, topicId, score, completionTime, userAnswers);
       setQuizCompleted(true);
     } catch (error) {
-      console.error('Submit error:', error);
+      console.error('Error submitting quiz score:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -102,15 +124,14 @@ const Quiz = () => {
     setQuizCompleted(false);
     setError(null);
     setStartTime(Date.now());
-    hasSubmittedRef.current = false;
-    hasClickedNextRef.current = false;
+    hasSubmittedRef.current = false; // ✅ reset lại flag khi làm lại bài
   };
 
   if (isLoading) {
     return (
       <MainLayout>
         <div className="flex items-center justify-center h-[60vh]">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
         </div>
       </MainLayout>
     );
@@ -119,8 +140,10 @@ const Quiz = () => {
   if (error) {
     return (
       <MainLayout>
-        <div className="text-center max-w-3xl mx-auto">
-          <div className="bg-red-100 text-red-800 p-4 rounded-md mb-4">{error}</div>
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="bg-red-100 text-red-800 p-4 rounded-md mb-4">
+            {error}
+          </div>
           <button
             onClick={() => navigate(`/topics/${topicId}`)}
             className="px-4 py-2 bg-primary text-white rounded-md"
@@ -135,15 +158,15 @@ const Quiz = () => {
   if (questions.length === 0) {
     return (
       <MainLayout>
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="bg-yellow-100 text-yellow-800 p-4 rounded-md mb-4">
-            Không có câu hỏi nào.
+            Không có câu hỏi nào cho chủ đề này.
           </div>
           <button
             onClick={() => navigate(`/topics/${topicId}`)}
             className="px-4 py-2 bg-primary text-white rounded-md"
           >
-            Quay lại
+            Quay lại danh sách từ vựng
           </button>
         </div>
       </MainLayout>
@@ -157,20 +180,21 @@ const Quiz = () => {
           <>
             <div className="mb-8">
               <div className="flex justify-between items-center mb-2">
-                <span>
-                  Câu hỏi {currentQuestionIndex + 1}/{questions.length}
-                </span>
+                <span>Câu hỏi {currentQuestionIndex + 1}/{questions.length}</span>
                 <span>Điểm: {score}</span>
               </div>
               <Progress value={((currentQuestionIndex + 1) / questions.length) * 100} />
             </div>
-            <QuizQuestion
-              question={questions[currentQuestionIndex]}
-              onAnswer={handleAnswer}
-              onNext={handleNextQuestion}
-              isLast={currentQuestionIndex === questions.length - 1}
-              isSubmitting={isSubmitting}
-            />
+
+            {questions.length > 0 && (
+              <QuizQuestion
+                question={questions[currentQuestionIndex]}
+                onAnswer={handleAnswer}
+                onNext={handleNextQuestion}
+                isLast={currentQuestionIndex === questions.length - 1}
+                isSubmitting={isSubmitting}
+              />
+            )}
           </>
         ) : (
           <QuizResult

@@ -130,7 +130,7 @@ class TestService(ITestService):
             raise ValidationError('Failed to save test result')
             
         # Update leaderboard
-        self.leaderboard_service.update_user_score(user_id, topic_id, score)
+        # self.leaderboard_service.update_user_score(user_id, topic_id, score)
         
         return {
             'score': score,

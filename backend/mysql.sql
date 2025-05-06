@@ -82,26 +82,18 @@ CREATE TRIGGER update_leaderboard_after_test
 AFTER INSERT ON test_results
 FOR EACH ROW
 BEGIN
-    /* Khi người dùng làm bài đầu tiên, trigger INSERT INTO... ON DUPLICATE KEY UPDATE
-     * đang đếm số lần làm bài là 2 thay vì 1 do COUNT(*) cũng tính cả bản ghi vừa INSERT.
-     * Cần sửa lại để không tính bài mới khi tính số lần làm bài.
-     */
-    DECLARE test_count INT;
-    SELECT COUNT(*) INTO test_count FROM test_results 
-    WHERE user_id = NEW.user_id AND topic_id = NEW.topic_id AND id != NEW.id;
-    
     INSERT INTO leaderboards (user_id, topic_id, total_score, tests_completed, average_score)
     SELECT 
         NEW.user_id,
         NEW.topic_id,
         SUM(score),
-        test_count + 1, -- Đếm chính xác số lần làm bài (các lần cũ + lần mới)
+        COUNT(*),
         AVG(score)
     FROM test_results
     WHERE user_id = NEW.user_id AND topic_id = NEW.topic_id
     ON DUPLICATE KEY UPDATE
         total_score = VALUES(total_score),
-        tests_completed = VALUES(tests_completed), 
+        tests_completed = VALUES(tests_completed),
         average_score = VALUES(average_score);
 END //
 
@@ -227,12 +219,3 @@ INSERT INTO test_results (user_id, topic_id, score, completion_time) VALUES
 (2, 1, 95, 280),
 (2, 2, 88, 310),
 (3, 1, 92, 290);
-
--- Cập nhật lại số lần làm bài trong leaderboards cho chính xác
-UPDATE leaderboards l
-JOIN (
-    SELECT user_id, topic_id, COUNT(*) as correct_count
-    FROM test_results
-    GROUP BY user_id, topic_id
-) t ON l.user_id = t.user_id AND l.topic_id = t.topic_id
-SET l.tests_completed = t.correct_count;
